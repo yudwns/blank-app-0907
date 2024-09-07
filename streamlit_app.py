@@ -13,13 +13,17 @@ st.write("텍스트 프롬프트를 입력하고 AI 이미지를 생성하세요
 # 텍스트 입력
 prompt = st.text_input("프롬프트를 입력하세요:")
 
+# 이미지 사이즈 선택
+size_options = ["256x256","512x512","1024x1024"]
+selected_size = st.selectbox("이미지 크기를 선택하세요:", size_options)
+
 if st.button("이미지 생성"):
     if prompt:
         try:
             kwargs = {
                 "prompt": prompt,
                 "n":1,
-                "size":"1024x1024"
+                "size":selected_size
             }
 
             # OpenAI API를 사용하여 이미지 생성
