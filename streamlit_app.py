@@ -22,7 +22,7 @@ if st.button("이미지 생성"):
         try:
             kwargs = {
                 "prompt": prompt,
-                "n":1,
+                "n":2,
                 "size":selected_size
             }
 
